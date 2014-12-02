@@ -57,7 +57,8 @@ end
 safeword.modes = {
   BBC = "British Broadcasting Corporation",
   EBU = "European Broadcasting Union",
-  XBOX = "Microsoft's Xbox game developer guidelines"
+  XBOX = "Microsoft's Xbox game developer guidelines",
+  OUYA = "OUYA SDK Example",
 }
 
 function safeword:getModes()
@@ -111,6 +112,14 @@ function safeword:setPreset(mode)
     self:setHorizontalAction(0.075/2)
     self:setVerticalTitle(0.075)
     self:setHorizontalTitle(0.075)
+    mode_set = true
+  elseif mode == "OUYA" then
+    -- https://github.com/ouya/ouya-sdk-examples/blob/master/Android/SafeAreaExample/src/tv/ouya/examples/android/safeareaexample/MainActivity.java#L83
+    -- OUYA does not mention a title safe, assuming twice that.
+    self:setVerticalAction(0.07)
+    self:setHorizontalAction(0.07)
+    self:setVerticalTitle(0.07*2)
+    self:setHorizontalTitle(0.07*2)
     mode_set = true
   else -- no mode given
     mode_set = true

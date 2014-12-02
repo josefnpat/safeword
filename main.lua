@@ -26,7 +26,7 @@ function love.draw()
     sw:getTitleX(),sw:getTitleY(),sw:getTitleWidth(),"right")
 end
 
-local demo_modes = {"BBC","EBU","XBOX"}
+local demo_modes = {"BBC","EBU","XBOX","OUYA"}
 current_res = 1
 local demo_res = {
   {x=16*50,y=9*50},--16:9
