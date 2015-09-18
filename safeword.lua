@@ -1,5 +1,26 @@
-local safeword = {}
+--- SafeWord is an overscan detection library for LÖVE.
+-- @module SafeWord
+-- @author Josef N Patoprsty <seppi@josefnpat.com>
+-- @copyright 2015
+-- @license <a href="http://www.opensource.org/licenses/zlib-license.php">zlib/libpng</a>
 
+local safeword = {
+  _VERSION = "SafeWord v1.0.0",
+  _DESCRIPTION = "An overscan detection library for LÖVE.",
+  _URL = "https://github.com/josefnpat/safeword/",
+  _LICENSE = [[
+    The zlib/libpng License
+    Copyright (c) 2015 Josef N Patoprsty
+    This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+    Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
+    1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+    2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+    3. This notice may not be removed or altered from any source distribution.
+  ]]
+}
+
+--- Main draw function
+-- This is the main draw function that one would add to <code>love.draw</code>.
 function safeword:draw()
   local old_color = {love.graphics.getColor()}
   love.graphics.setColor(255,0,0,127)
@@ -61,9 +82,23 @@ safeword.modes = {
   OUYA = "OUYA SDK Example",
 }
 
+--- Get the available modes in SafeWord
+-- @return Table of strings with acronyms.
+-- Example:<br/>
+-- <code>{OUYA = "OUYA SDK Example", XBOX = "XBOX Example" }</code>
 function safeword:getModes()
   return safeword.modes
 end
+
+--- Set the current mode in SafeWord.
+-- For maintainence reasons, please avoid using the string literal when using
+-- this library. Indices will be maintained, but string literals are subject to
+-- change.
+-- Example:<br/>
+-- <code>sw = safeword.new()<br/>
+-- local foomode = sw:getModes().OUYA<br/>
+-- sw:setMode(foomode)</code>
+-- @param mode <i>Optional</i> the mode that you would like set.
 
 function safeword:setPreset(mode)
 
@@ -134,40 +169,65 @@ function safeword:setPreset(mode)
 
 end
 
+--- Get the calculated X coordinate of the action safe area.
 function safeword:getActionX()
   return love.graphics.getWidth()*self:getHorizontalAction()
 end
 
+--- Get the calculated Y coordinate of the action safe area.
 function safeword:getActionY()
   return love.graphics.getHeight()*self:getVerticalAction()
 end
 
+--- Get the calculated width of the action safe area.
 function safeword:getActionWidth()
   return love.graphics.getWidth()*(1-self:getHorizontalAction()*2)
 end
 
+--- Get the calculated height of the action safe area.
 function safeword:getActionHeight()
   return love.graphics.getHeight()*(1-self:getVerticalAction()*2)
 end
 
+--- Get the calculated X coordinate of the title safe area.
 function safeword:getTitleX()
   return love.graphics.getWidth()*self:getHorizontalTitle()
 end
 
+--- Get the calculated Y coordinate of the title safe area.
 function safeword:getTitleY()
   return love.graphics.getHeight()*self:getVerticalTitle()
 end
 
+--- Get the calculated width of the title safe area.
 function safeword:getTitleWidth()
   return love.graphics.getWidth()*(1-self:getHorizontalTitle()*2)
 end
 
+--- Get the calculated height of the title safe area.
 function safeword:getTitleHeight()
   return love.graphics.getHeight()*(1-self:getHorizontalTitle()*2)
 end
 
--- LuaClassGen pregenerated functions
-
+--- Instansiate a new instance of SafeWord.
+-- Some Examples:<br/>
+-- <code>sw = safeword.new()<br/>
+-- <br/>
+-- sw = safeword.new({<br/>
+--   horizontalAction = 0.03,<br/>
+--   verticalAction = 0.03,<br/>
+-- })<br/>
+-- <br/>
+-- sw = safeword.new{<br/>
+--   horizontalAction = 0.03,<br/>
+--   verticalAction = 0.03,<br/>
+--   horizontalTitle = 0.07,<br/>
+--   verticalTitle = 0.07,<br/>
+-- }<br/></code>
+-- @param init <i>Optional</i> A table containing initial values for easy usage. Available
+-- overrides: <code>horizontalAction</code>, <code>horizontalTitle</code>,
+-- <code>verticalAction</code> and <code>verticalTitle</code>.
+-- @return Table returns the safeword class table.
 function safeword.new(init)
   init = init or {}
   local self={}
@@ -203,34 +263,50 @@ function safeword.new(init)
   return self
 end
 
+--- Get the currently set horizontal action safe area percentage.
+-- @return Float The percent represented mathematically (e.g. 0.01 is 1%)
 function safeword:getHorizontalAction()
   return self._horizontalAction
 end
 
+--- Set the current horizontal action safe area percentage.
+-- @param val The percent represented mathematically (e.g. 0.01 is 1%)
 function safeword:setHorizontalAction(val)
   self._horizontalAction=val
 end
 
+--- Get the currently set horizontal title safe area percentage.
+-- @return Float The percent represented mathematically (e.g. 0.01 is 1%)
 function safeword:getHorizontalTitle()
   return self._horizontalTitle
 end
 
+--- Set the current horizontal title safe area percentage.
+-- @param val The percent represented mathematically (e.g. 0.01 is 1%)
 function safeword:setHorizontalTitle(val)
   self._horizontalTitle=val
 end
 
+--- Get the currently set vertical action safe area percentage.
+-- @return Float The percent represented mathematically (e.g. 0.01 is 1%)
 function safeword:getVerticalAction()
   return self._verticalAction
 end
 
+--- Set the current vertical action safe area percentage.
+-- @param val The percent represented mathematically (e.g. 0.01 is 1%)
 function safeword:setVerticalAction(val)
   self._verticalAction=val
 end
 
+--- Get the currently set vertical title safe area percentage.
+-- @return Float The percent represented mathematically (e.g. 0.01 is 1%)
 function safeword:getVerticalTitle()
   return self._verticalTitle
 end
 
+--- Set the current vertical title safe area percentage.
+-- @param val The percent represented mathematically (e.g. 0.01 is 1%)
 function safeword:setVerticalTitle(val)
   self._verticalTitle=val
 end
