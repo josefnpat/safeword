@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>SafeWord</h1>
+
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><strong>SafeWord</strong></li>
+</ul>
+<h2>Examples</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="examples/main.lua.html">main.lua</a></li>
+  <li><a href="examples/conf.lua.html">conf.lua</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>SafeWord</code></h1>
+<p>SafeWord is an overscan detection library for LÖVE.</p>
+<p></p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Copyright</strong>: 2015</li>
+        <li><strong>License</strong>: <a href="http://www.opensource.org/licenses/zlib-license.php">zlib/libpng</a></li>
+        <li><strong>Author</strong>: Josef N Patoprsty <seppi@josefnpat.com></li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#safeword.new">safeword.new (init)</a></td>
+	<td class="summary">Instansiate a new instance of SafeWord.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:draw">safeword:draw ()</a></td>
+	<td class="summary">Main draw function
+ This is the main draw function that one would add to <code>love.draw</code>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:getModes">safeword:getModes ()</a></td>
+	<td class="summary">Get the available modes in SafeWord</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:setPreset">safeword:setPreset (mode)</a></td>
+	<td class="summary">Set the current mode in SafeWord.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:getActionX">safeword:getActionX ()</a></td>
+	<td class="summary">Get the calculated X coordinate of the action safe area.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:getActionY">safeword:getActionY ()</a></td>
+	<td class="summary">Get the calculated Y coordinate of the action safe area.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:getActionWidth">safeword:getActionWidth ()</a></td>
+	<td class="summary">Get the calculated width of the action safe area.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:getActionHeight">safeword:getActionHeight ()</a></td>
+	<td class="summary">Get the calculated height of the action safe area.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:getTitleX">safeword:getTitleX ()</a></td>
+	<td class="summary">Get the calculated X coordinate of the title safe area.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:getTitleY">safeword:getTitleY ()</a></td>
+	<td class="summary">Get the calculated Y coordinate of the title safe area.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:getTitleWidth">safeword:getTitleWidth ()</a></td>
+	<td class="summary">Get the calculated width of the title safe area.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:getTitleHeight">safeword:getTitleHeight ()</a></td>
+	<td class="summary">Get the calculated height of the title safe area.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:getHorizontalAction">safeword:getHorizontalAction ()</a></td>
+	<td class="summary">Get the currently set horizontal action safe area percentage.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:setHorizontalAction">safeword:setHorizontalAction (val)</a></td>
+	<td class="summary">Set the current horizontal action safe area percentage.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:getHorizontalTitle">safeword:getHorizontalTitle ()</a></td>
+	<td class="summary">Get the currently set horizontal title safe area percentage.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:setHorizontalTitle">safeword:setHorizontalTitle (val)</a></td>
+	<td class="summary">Set the current horizontal title safe area percentage.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:getVerticalAction">safeword:getVerticalAction ()</a></td>
+	<td class="summary">Get the currently set vertical action safe area percentage.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:setVerticalAction">safeword:setVerticalAction (val)</a></td>
+	<td class="summary">Set the current vertical action safe area percentage.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:getVerticalTitle">safeword:getVerticalTitle ()</a></td>
+	<td class="summary">Get the currently set vertical title safe area percentage.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#safeword:setVerticalTitle">safeword:setVerticalTitle (val)</a></td>
+	<td class="summary">Set the current vertical title safe area percentage.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "safeword.new"></a>
+    <strong>safeword.new (init)</strong>
+    </dt>
+    <dd>
+    Instansiate a new instance of SafeWord.
+ Some Examples:<br/>
+ <code>sw = safeword.new()<br/>
+ <br/>
+ sw = safeword.new({<br/>
+   horizontalAction = 0.03,<br/>
+   verticalAction = 0.03,<br/>
+ })<br/>
+ <br/>
+ sw = safeword.new{<br/>
+   horizontalAction = 0.03,<br/>
+   verticalAction = 0.03,<br/>
+   horizontalTitle = 0.07,<br/>
+   verticalTitle = 0.07,<br/>
+ }<br/></code>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">init</span>
+         <i>Optional</i> A table containing initial values for easy usage. Available
+ overrides: <code>horizontalAction</code>, <code>horizontalTitle</code>,
+ <code>verticalAction</code> and <code>verticalTitle</code>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Table returns the safeword class table.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:draw"></a>
+    <strong>safeword:draw ()</strong>
+    </dt>
+    <dd>
+    Main draw function
+ This is the main draw function that one would add to <code>love.draw</code>.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:getModes"></a>
+    <strong>safeword:getModes ()</strong>
+    </dt>
+    <dd>
+    Get the available modes in SafeWord
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+         Table of strings with acronyms.
+ Example:<br/>
+ <code>{OUYA = "OUYA SDK Example", XBOX = "XBOX Example" }</code>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:setPreset"></a>
+    <strong>safeword:setPreset (mode)</strong>
+    </dt>
+    <dd>
+    Set the current mode in SafeWord.
+ For maintainence reasons, please avoid using the string literal when using
+ this library. Indices will be maintained, but string literals are subject to
+ change.
+ Example:<br/>
+ <code>sw = safeword.new()<br/>
+ local foomode = sw:getModes().OUYA<br/>
+ sw:setMode(foomode)</code>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">mode</span>
+         <i>Optional</i> the mode that you would like set.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:getActionX"></a>
+    <strong>safeword:getActionX ()</strong>
+    </dt>
+    <dd>
+    Get the calculated X coordinate of the action safe area.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:getActionY"></a>
+    <strong>safeword:getActionY ()</strong>
+    </dt>
+    <dd>
+    Get the calculated Y coordinate of the action safe area.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:getActionWidth"></a>
+    <strong>safeword:getActionWidth ()</strong>
+    </dt>
+    <dd>
+    Get the calculated width of the action safe area.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:getActionHeight"></a>
+    <strong>safeword:getActionHeight ()</strong>
+    </dt>
+    <dd>
+    Get the calculated height of the action safe area.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:getTitleX"></a>
+    <strong>safeword:getTitleX ()</strong>
+    </dt>
+    <dd>
+    Get the calculated X coordinate of the title safe area.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:getTitleY"></a>
+    <strong>safeword:getTitleY ()</strong>
+    </dt>
+    <dd>
+    Get the calculated Y coordinate of the title safe area.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:getTitleWidth"></a>
+    <strong>safeword:getTitleWidth ()</strong>
+    </dt>
+    <dd>
+    Get the calculated width of the title safe area.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:getTitleHeight"></a>
+    <strong>safeword:getTitleHeight ()</strong>
+    </dt>
+    <dd>
+    Get the calculated height of the title safe area.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:getHorizontalAction"></a>
+    <strong>safeword:getHorizontalAction ()</strong>
+    </dt>
+    <dd>
+    Get the currently set horizontal action safe area percentage.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Float The percent represented mathematically (e.g. 0.01 is 1%)
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:setHorizontalAction"></a>
+    <strong>safeword:setHorizontalAction (val)</strong>
+    </dt>
+    <dd>
+    Set the current horizontal action safe area percentage.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">val</span>
+         The percent represented mathematically (e.g. 0.01 is 1%)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:getHorizontalTitle"></a>
+    <strong>safeword:getHorizontalTitle ()</strong>
+    </dt>
+    <dd>
+    Get the currently set horizontal title safe area percentage.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Float The percent represented mathematically (e.g. 0.01 is 1%)
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:setHorizontalTitle"></a>
+    <strong>safeword:setHorizontalTitle (val)</strong>
+    </dt>
+    <dd>
+    Set the current horizontal title safe area percentage.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">val</span>
+         The percent represented mathematically (e.g. 0.01 is 1%)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:getVerticalAction"></a>
+    <strong>safeword:getVerticalAction ()</strong>
+    </dt>
+    <dd>
+    Get the currently set vertical action safe area percentage.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Float The percent represented mathematically (e.g. 0.01 is 1%)
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:setVerticalAction"></a>
+    <strong>safeword:setVerticalAction (val)</strong>
+    </dt>
+    <dd>
+    Set the current vertical action safe area percentage.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">val</span>
+         The percent represented mathematically (e.g. 0.01 is 1%)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:getVerticalTitle"></a>
+    <strong>safeword:getVerticalTitle ()</strong>
+    </dt>
+    <dd>
+    Get the currently set vertical title safe area percentage.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Float The percent represented mathematically (e.g. 0.01 is 1%)
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "safeword:setVerticalTitle"></a>
+    <strong>safeword:setVerticalTitle (val)</strong>
+    </dt>
+    <dd>
+    Set the current vertical title safe area percentage.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">val</span>
+         The percent represented mathematically (e.g. 0.01 is 1%)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-09-18 07:56:38 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
